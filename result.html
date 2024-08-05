@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="logo.png">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/40d012bf96.js" crossorigin="anonymous"></script>
+    <title>Readable Password Generator</title>
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <div class="logo"><a href="home.html">Readable Password Generator</a></div>
+        </div>
+    </nav>
+
+    <div class="container" id="container">
+        <div class="formSection">
+
+            <div class="containerTitle">
+                <h2>Recommended Password</h2>
+                <h4>This is based on your input</h4>
+            </div>
+    
+            <div class="explanation">
+                <p id="generated-pass"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h3>Contact</h3>
+        <h1>Get in Touch</h1>
+    
+        <div class="sosmed">
+            <h5>muhammadyusuf.muhayuf@gmail.com</h5>
+            <a href="https://github.com/Muhayuf"><i class="fa-brands fa-github fa-lg sosmedIcon" style="color: #FFC7ED;"></i></a>
+            <a href="https://www.linkedin.com/in/muhammad-yusuf-588280208/"><i class="fa-brands fa-linkedin fa-lg sosmedIcon" style="color: #FFC7ED;"></i></a>        
+            <a href="https://www.instagram.com/muhayuf/"><i class="fa-brands fa-instagram fa-lg sosmedIcon" style="color: #FFC7ED;"></i></a>
+        </div>
+        <div class="copyright">
+            <p>Copyright © 2024. Develop & Designed by Muhammad Yusuf</p>
+        </div>
+    </div>
+      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        // Function to get URL parameter by name
+        function getParameterByName(name, url = window.location.href) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+            const results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        // Get the password from the URL and display it
+        document.addEventListener('DOMContentLoaded', () => {
+            const password = getParameterByName('password');
+            document.getElementById('generated-pass').textContent = password;
+        });
+    </script>
+</body>
+</html>

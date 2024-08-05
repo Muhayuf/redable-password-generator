@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="logo.png">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/40d012bf96.js" crossorigin="anonymous"></script>
+    <title>Readable Password Generator</title>
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <div class="logo"><a href="home.html">Readable Password Generator</a></div>
+        </div>
+    </nav>
+
+    <div class="container" id="container">
+        <div class="formSection">
+
+            <div class="containerTitle">
+                <h2>Fun Fact!!!</h2>
+                <h4>Why password is so important?</h4>
+            </div>
+
+            <div class="explanation">
+                <p id="fact-text"></p>
+            </div>
+            
+            <div class="buttons">
+                <input type="button" class="button" id="other-btn" value="Other Fun Fact">
+                <input type="button" class="button" value="Next" onclick="nextPage()">
+            </div>
+        </div>
+    
+        <script type="text/javascript">
+            function nextPage() {
+                window.location.href = 'form.html';
+            }
+
+            const funFacts = [
+                "Passwords serve as the first line of defense in protecting personal and sensitive information from unauthorized access.",
+                "<strong>Password pirates are real!</strong> They're not just in movies – they're out there trying to steal your stuff, and a weak password is their treasure map",
+                "Your password is like a key to your digital life. Imagine leaving your front door unlocked – that's what a weak password does for your online accounts.",
+                "<strong>You're not a superhero!</strong> Even the most tech-savvy people can fall victim to hackers. A strong password is your shield against the bad guys.",
+                "<strong>\"Password123\" is like wearing your underwear outside.</strong> It's just not a good look, and it makes you super vulnerable.",
+                "Even if your information isn't stolen, a weak password can get you locked out of your own accounts. Ever forgotten your password and spent hours trying to recover it? That's the price of bad password hygiene.",
+                "<strong>Think of your password as your secret handshake.</strong> The more complex and unique it is, the less likely someone will be able to guess it.",
+                "<strong>Don't use the same password for everything.</strong> That's like using the same key for your house, your car, and your office – it's just asking for trouble.",
+                "Strong passwords can actually make your life easier. Once you get into the habit of using unique and secure passwords, you'll be less likely to forget them and spend time recovering accounts.",
+                "\"Password\" is a terrible password. Just trust me on this one.",
+                "<strong>A secure password is like a good joke.</strong> It's hard to crack, but once you get it, it's really funny (and satisfying)."
+            ];
+            
+            function displayFact(facts) {
+                const factContainer = document.getElementById('fact-text');
+                const randomIndex = Math.floor(Math.random() * funFacts.length);
+                const randomFact = funFacts[randomIndex];
+                factContainer.innerHTML = randomFact;
+            }
+            
+            document.getElementById('other-btn').addEventListener('click', displayFact);
+            document.addEventListener('DOMContentLoaded', displayFact);
+        </script>
+    </div>
+    
+    <div class="footer">
+        <h3>Contact</h3>
+        <h1>Get in Touch</h1>
+    
+        <div class="sosmed">
+            <h5>muhammadyusuf.muhayuf@gmail.com</h5>
+            <a href="https://github.com/Muhayuf"><i class="fa-brands fa-github fa-lg sosmedIcon" style="color: #FFC7ED;"></i></a>
+            <a href="https://www.linkedin.com/in/muhammad-yusuf-588280208/"><i class="fa-brands fa-linkedin fa-lg sosmedIcon" style="color: #FFC7ED;"></i></a>        
+            <a href="https://www.instagram.com/muhayuf/"><i class="fa-brands fa-instagram fa-lg sosmedIcon" style="color: #FFC7ED;"></i></a>
+        </div>
+        <div class="copyright">
+            <p>Copyright © 2024. Develop & Designed by Muhammad Yusuf</p>
+        </div>
+    </div>
+      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>
